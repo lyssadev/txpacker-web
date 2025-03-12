@@ -9,31 +9,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#" class="logo" aria-label="TXPacker - Back to top">TXPacker</a>
+            <a href="#" class="logo" aria-label="TXPacker - Back to top">
+                <span class="material-icons-round">extension</span>
+                <span>TXPacker</span>
+            </a>
             <ul role="navigation" aria-label="Main navigation">
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#download" class="nav-link">Download</a></li>
-                <li><a href="#requirements" class="nav-link">Requirements</a></li>
-                <li><a href="#guide" class="nav-link">Guide</a></li>
+                <li>
+                    <a href="#features" class="nav-link">
+                        <span class="material-icons-round">stars</span>
+                        <span>Features</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#download" class="nav-link">
+                        <span class="material-icons-round">download</span>
+                        <span>Download</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#requirements" class="nav-link">
+                        <span class="material-icons-round">checklist</span>
+                        <span>Requirements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#guide" class="nav-link">
+                        <span class="material-icons-round">help_outline</span>
+                        <span>Guide</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>TXPacker</h1>
+            <h1>
+                <span class="material-icons-round hero-icon">extension</span>
+                TXPacker
+            </h1>
             <p>Simplify your Minecraft Bedrock Edition content management</p>
             <div class="button-container">
                 <a href="https://github.com/lyssadev/TXPacker/releases/latest" class="cta-button" target="_blank" rel="noopener noreferrer">
-                    <span aria-hidden="true">⬇️</span>
+                    <span class="material-icons-round">download</span>
                     <span>Download Latest</span>
                 </a>
                 <a href="https://github.com/lyssadev/TXPacker" class="github-button" target="_blank" rel="noopener noreferrer">
-                    <span aria-hidden="true">⭐</span>
+                    <span class="material-icons-round">code</span>
                     <span>View on GitHub</span>
                 </a>
             </div>
@@ -43,22 +70,22 @@
             <h2>Features</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <span class="icon" aria-hidden="true">🎮</span>
+                    <span class="material-icons-round icon">games</span>
                     <h3>Easy Import</h3>
                     <p>Import .mcpack, .mcaddon, and .mcworld files with ease</p>
                 </div>
                 <div class="feature-card">
-                    <span class="icon" aria-hidden="true">🌍</span>
+                    <span class="material-icons-round icon">language</span>
                     <h3>Multi-language</h3>
                     <p>Support for multiple languages with dynamic switching</p>
                 </div>
                 <div class="feature-card">
-                    <span class="icon" aria-hidden="true">📱</span>
+                    <span class="material-icons-round icon">devices</span>
                     <h3>Adaptive UI</h3>
                     <p>Modern interface that works on both phones and tablets</p>
                 </div>
                 <div class="feature-card">
-                    <span class="icon" aria-hidden="true">🔒</span>
+                    <span class="material-icons-round icon">security</span>
                     <h3>Secure</h3>
                     <p>Secure file handling with proper permissions management</p>
                 </div>
@@ -68,28 +95,55 @@
         <section id="requirements" class="requirements">
             <h2>Requirements</h2>
             <ul>
-                <li>Android 7.0 (API level 24) or higher</li>
-                <li>Minecraft Bedrock Edition installed</li>
-                <li>Storage permissions for file access</li>
+                <li>
+                    <span class="material-icons-round list-icon">android</span>
+                    Android 7.0 (API level 24) or higher
+                </li>
+                <li>
+                    <span class="material-icons-round list-icon">games</span>
+                    Minecraft Bedrock Edition installed
+                </li>
+                <li>
+                    <span class="material-icons-round list-icon">folder</span>
+                    Storage permissions for file access
+                </li>
             </ul>
         </section>
 
         <section id="guide" class="guide">
             <h2>How to Use</h2>
             <ol>
-                <li>Launch TXPacker</li>
-                <li>Click the "Import" button to select your content</li>
-                <li>Choose your Minecraft content file</li>
-                <li>Click "Load" to import</li>
-                <li>Enjoy your content in Minecraft!</li>
+                <li>
+                    <span class="material-icons-round list-icon">launch</span>
+                    Launch TXPacker
+                </li>
+                <li>
+                    <span class="material-icons-round list-icon">upload_file</span>
+                    Click the "Import" button to select your content
+                </li>
+                <li>
+                    <span class="material-icons-round list-icon">folder_open</span>
+                    Choose your Minecraft content file
+                </li>
+                <li>
+                    <span class="material-icons-round list-icon">check_circle</span>
+                    Click "Load" to import
+                </li>
+                <li>
+                    <span class="material-icons-round list-icon">celebration</span>
+                    Enjoy your content in Minecraft!
+                </li>
             </ol>
         </section>
     </main>
 
     <footer>
-        <p>Made with <span aria-label="love">❤️</span> for the Minecraft community</p>
+        <p>Made with <span class="material-icons-round" aria-label="love">favorite</span> for the Minecraft community</p>
         <p>Licensed under MIT License</p>
-        <a href="https://github.com/lyssadev/TXPacker" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a href="https://github.com/lyssadev/TXPacker" target="_blank" rel="noopener noreferrer">
+            <span class="material-icons-round">code</span>
+            View on GitHub
+        </a>
     </footer>
 
     <script src="script.js"></script>
