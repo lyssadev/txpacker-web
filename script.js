@@ -90,7 +90,18 @@ const createMobileNav = () => {
     burger.addEventListener('click', () => {
         nav.classList.toggle('show');
         burger.textContent = nav.classList.contains('show') ? '✕' : '☰';
-        document.body.style.overflow = nav.classList.contains('show') ? 'hidden' : '';
+        
+        // Only set overflow to hidden when menu is open
+        if (nav.classList.contains('show')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+            // Ensure we reset any scroll position if needed
+            window.scrollTo({
+                top: window.pageYOffset,
+                behavior: 'auto'
+            });
+        }
         
         // Animate menu items with a slight delay between each
         const menuItems = nav.querySelectorAll('li');
@@ -114,6 +125,12 @@ const createMobileNav = () => {
             nav.classList.remove('show');
             burger.textContent = '☰';
             document.body.style.overflow = '';
+            
+            // Ensure we reset any scroll position if needed
+            window.scrollTo({
+                top: window.pageYOffset,
+                behavior: 'auto'
+            });
         }
     });
 };
