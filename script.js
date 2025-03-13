@@ -92,11 +92,14 @@ const createMobileNav = () => {
         burger.textContent = nav.classList.contains('show') ? '✕' : '☰';
         document.body.style.overflow = nav.classList.contains('show') ? 'hidden' : '';
         
-        // Animate menu items
+        // Animate menu items with a slight delay between each
         const menuItems = nav.querySelectorAll('li');
         menuItems.forEach((item, index) => {
             if (nav.classList.contains('show')) {
-                item.style.animation = `fadeInDown 0.3s ease forwards ${index * 0.1}s`;
+                // Reset any existing animation first
+                item.style.animation = 'none';
+                item.offsetHeight; // Trigger reflow
+                item.style.animation = `fadeInDown 0.4s ease forwards ${index * 0.1 + 0.1}s`;
             } else {
                 item.style.animation = '';
             }
@@ -168,4 +171,4 @@ document.querySelectorAll('.cta-button, .github-button').forEach(button => {
         button.style.setProperty('--x', `${x}px`);
         button.style.setProperty('--y', `${y}px`);
     });
-}); 
+});
