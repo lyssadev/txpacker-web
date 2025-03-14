@@ -23,14 +23,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
-
-            // Close mobile menu if open
-            const nav = document.querySelector('nav ul');
-            const burger = document.querySelector('.burger');
-            if (nav.classList.contains('show')) {
-                nav.classList.remove('show');
-                burger.textContent = '☰';
-            }
         }
     });
 });
@@ -78,63 +70,6 @@ window.addEventListener('scroll', () => {
     }, 100);
 });
 
-// Mobile navigation
-const createMobileNav = () => {
-    const nav = document.querySelector('nav ul');
-    const burger = document.createElement('button');
-    burger.className = 'burger';
-    burger.setAttribute('aria-label', 'Toggle navigation menu');
-    burger.innerHTML = '☰';
-    document.querySelector('nav').appendChild(burger);
-
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('show');
-        burger.textContent = nav.classList.contains('show') ? '✕' : '☰';
-        
-        // Only set overflow to hidden when menu is open
-        if (nav.classList.contains('show')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-            // Ensure we reset any scroll position if needed
-            window.scrollTo({
-                top: window.pageYOffset,
-                behavior: 'auto'
-            });
-        }
-        
-        // Animate menu items with a slight delay between each
-        const menuItems = nav.querySelectorAll('li');
-        menuItems.forEach((item, index) => {
-            if (nav.classList.contains('show')) {
-                // Reset any existing animation first
-                item.style.animation = 'none';
-                item.offsetHeight; // Trigger reflow
-                item.style.animation = `fadeInDown 0.4s ease forwards ${index * 0.1 + 0.1}s`;
-            } else {
-                item.style.animation = '';
-            }
-        });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (nav.classList.contains('show') && 
-            !nav.contains(e.target) && 
-            !burger.contains(e.target)) {
-            nav.classList.remove('show');
-            burger.textContent = '☰';
-            document.body.style.overflow = '';
-            
-            // Ensure we reset any scroll position if needed
-            window.scrollTo({
-                top: window.pageYOffset,
-                behavior: 'auto'
-            });
-        }
-    });
-};
-
 // Feature cards animation with improved performance
 const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
@@ -153,29 +88,6 @@ const observer = new IntersectionObserver(observerCallback, {
 document.querySelectorAll('.feature-card').forEach((card, index) => {
     card.style.transitionDelay = `${index * 0.1}s`;
     observer.observe(card);
-});
-
-// Initialize mobile navigation
-if (window.innerWidth <= 768) {
-    createMobileNav();
-}
-
-// Handle window resize
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        if (window.innerWidth <= 768 && !document.querySelector('.burger')) {
-            createMobileNav();
-        } else if (window.innerWidth > 768) {
-            const burger = document.querySelector('.burger');
-            if (burger) {
-                burger.remove();
-            }
-            document.querySelector('nav ul').classList.remove('show');
-            document.body.style.overflow = '';
-        }
-    }, 250);
 });
 
 // Add hover effect to buttons
